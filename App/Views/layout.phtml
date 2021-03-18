@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Iconic CSS -->
+    <link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+
+    <link rel="icon" type="image/png" href="imagens/twice-logo-preto.png"/>
+
+    <title></title>
+
+  </head>
+  <body>
+    
+    <?php $this->content(); ?>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(() => {
+            //Setar título da página dinamicamente
+            $(document).attr("title", "<?= $this->view->title ?>");
+
+            //verificar se data do cadastro é válida
+            $("#form_cadastro").submit( e => {
+                e.preventDefault();
+                let valor = parseInt($("#nascimento").val().substr(0, 4));
+                let ano = new Date().getFullYear();
+                if(valor > ano) {
+                    $("#erro_cadastro").remove();
+                    $("#nascimento").after("<span id='erro_cadastro' class='text-danger text-center'>Ano inválido</span>");
+                } else {
+                    $("#form_cadastro").unbind("submit").submit();
+                }
+            });
+
+            //copiar url clicada
+            $(".copiar").on("click", e => {
+                e.preventDefault();
+                let id = $(e.currentTarget).attr("id").replace("copiar", "url");
+                let url = $("#"+id).html();
+                $("body").append("<input type='text' id='copy'></input>");
+                $("#copy").val(url).select();
+                document.execCommand("copy");
+                $("#copy").remove();
+            });
+
+            //modal erro página login
+            /*let titulo = "<?= $this->view->title ?>";
+            if(titulo == "Projeto Twice - Login") {
+                let login = "<?= $this->view->erro ?>";
+                if(login == "erro") {
+                    $("#usuarioErro").modal("show");
+                }
+            }*/
+
+            
+        });
+    </script>
+    
+  </body>
+</html>

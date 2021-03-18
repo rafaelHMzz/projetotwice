@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+html, body {
+	height: 100%;
+	/*background-color: #d1c2ea;*/
+	/*background-color: #E7DEC4;*/
+	background-color: #1a1a1d;
+	/*font-family: 'Montserrat', sans-serif;*/
+	font-family: 'RocknRoll One', 'DotGothic16', 'Roboto', sans-serif;
+}
+
+.imagem-login {
+	margin: 20px auto 0 auto;
+	width: 60px;
+}
+
+.btn-login {
+	margin-top: 20px;
+	color: white;
+	transition: all 0.4s ease-in-out;
+
+}
+
+.btn-login:hover {
+	color: white;
+}
+
+.btn-login:focus {
+	box-shadow: 0 0 0 0.2rem rgba(94, 90, 75, 0.25);
+}
+
+.form-control:focus {
+	border-color: rgb(94, 90, 75);
+	outline: 0;
+	box-shadow: 0 0 0 0.2rem rgba(94, 90, 75, 0.25);
+}
+
+.form-login {
+	padding: 20px 50px 50px 50px;
+}
+
+.row-login {
+	color: white;
+}
+
+.logo-img {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+
+.nav-a {
+	color: white;
+	padding-right: 50px;
+	padding-left: 25px;
+	margin-left: 10px;
+	text-transform: uppercase;
+}
+
+.nav-a:hover {
+	color: white;
+}
+
+.nav-a:after {
+	padding-bottom: 3px;
+	content: "";
+	display: block;
+	width: 0%;
+	border-bottom: 2px solid white;
+	transition: all 0.3s ease-in-out;
+}
+
+.nav-a:hover:after {
+	width: 100%;
+}
+
+.navbar-toggler:focus {
+	outline: none;
+    box-shadow: none;
+}
+
+.navbar-toggler i {
+	color: white;
+}
+
+.caixa2 {
+	border: 2px solid #45a29e;
+	box-shadow: 5px 5px 8px #999999;
+	color: white;
+	transition: all 0.3s ease-in-out;
+}
+
+.episodios {
+	border: 1px solid black;
+	box-shadow: 10px 10px 8px black;
+}
+
+
+.main {
+	min-height: calc(100% - 110.75px - 72px);
+}
+
+.titulo {
+	color: white;
+}
+
+.btn-ep {
+	color: white;
+	border-color: ;
+	background-color: ;
+	transition: all 0.4s ease-in-out;
+}
+
+.btn-ep:hover {
+	color: white;
+}
+
+.btn-ep:focus {
+	box-shadow: 0 0 0 0.2rem rgba(94, 90, 75, 0.25);
+}
+
+.table i {
+	color: white;
+}
+
+.btn-main {
+	width: 25%;
+}
+
+.modal-content {
+	background-color: #1a1a1d;
+	color: white;
+}
+
+.span-modal {
+	color: white;
+}
+
+@media (max-width: 575.98px) {
+	#menu-header {
+		margin-top: 15px;
+	}
+
+	.btn-main {
+		width: 50%;
+	}
+}
+
+
+
+
+

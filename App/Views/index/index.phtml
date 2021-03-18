@@ -1,0 +1,43 @@
+<!--<div class="modal fade" id="usuarioErro" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Erro usuário</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="span-modal" aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Testando modal</p>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<div class="container h-100 d-flex justify-content-center">
+    <div class="row align-self-center row-login">
+        <img class="img-fluid imagem-login" src="imagens/twice-logo-branco.png">
+        <div class="col-md-12">
+            <form class="form-login" action="/login" method="post">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input class="form-control" type="email" name="email" id="email" autocomplete="off" autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input class="form-control" type="password" name="senha" id="senha" autocomplete="off">
+                </div>
+                <?php if($this->view->erro == "erro") { ?>
+                    <span class="text-danger text-center">E-mail ou Senha incorreto(s)</span>
+                <?php } else if($this->view->erro == "sessao") { ?>
+                    <span class="text-danger text-center">Login inválido</span>
+                <?php } ?>
+                <button type="submit" class="btn-login btn-dark btn btn-md btn-block" name="cmd" value="logar">Logar</button>
+                <button type="submit" class="btn-login btn-dark btn btn-md btn-block" name="cmd" value="cadastrar">Cadastrar</button>
+                
+            </form>
+            
+        </div>
+    </div>
+        
+</div>

@@ -1,0 +1,43 @@
+<div class="container h-100 d-flex justify-content-center">
+    <div class="row align-self-center row-login">
+    	<a href="/" class="imagem-login" title="Voltar para o início">
+    		<img class="img-fluid" src="imagens/twice-logo-branco.png">
+    	</a>
+        <div class="col-md-12">
+            <form id="form_cadastro" class="form-login" action="/cadastrar" method="post">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input class="form-control" type="text" name="nome" id="nome" required="required" autocomplete="off" autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="nasc">Data de nascimento:</label>
+                    <input class="form-control" type="date" name="nascimento" id="nascimento" min="1900-12-31" required="required" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="sexo">Sexo:</label>
+                    <select class="form-control" id="sexo" name="sexo" required="required"> 
+                        <option value="masc">Masculino</option>
+                        <option value="fem">Feminino</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input class="form-control" type="email" name="email" id="email" required="required" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input class="form-control" type="password" name="senha" id="senha" required="required" autocomplete="off">
+                </div>
+
+                <?php if($this->view->cadastro == "erro") { ?>
+                    <span class="text-danger text-center">Usuário já cadastrado no sistema</span>
+                <?php } else if($this->view->cadastro == "success") { ?>
+                    <span class="text-success text-center">Usuário cadastrado com sucesso</span>
+                <?php } ?>
+                <button class="btn-login btn-dark btn btn-md btn-block" name="cmd" value="cadastrar">Cadastrar</button>
+
+            </form>
+        </div>
+    </div>
+        
+</div>

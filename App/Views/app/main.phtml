@@ -1,0 +1,85 @@
+<header>
+        
+    <nav class="navbar navbar-expand-sm">
+        <div class="container">
+            
+            <a class="navbar-brand" href="/main">
+                <img class="img-fluid" src="imagens/twice-logo-branco.png" style="width: 75px">
+            </a>
+
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#menu-header">
+                <i class="fas fa-hamburger"></i>
+            </button>
+
+            <div class="navbar-collapse collapse" id="menu-header">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link nav-a" href="/main">
+                            <i class="fas fa-home"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-a" href="/animes">
+                            <i class="fas fa-play-circle"></i>
+                            Animes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-a" href="/filmes">
+                            <i class="fas fa-film"></i>
+                            Filmes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-a" href="/config">
+                            <i class="fas fa-cog"></i>
+                            Configurações
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-a" href="/sair">
+                            <i class="fas fa-door-closed"></i>
+                            Sair
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+<section>
+    
+    <div class="container mt-3">
+        <div class="row pt-3">
+            <div class="col-12 mb-2">
+                <a class="btn btn-dark btn-block btn-ep btn-main" href="/adicionarSite">Adicionar site</a>
+            </div>
+            <div class="col-12">
+                <table class="table table-responsive-md table-dark table-striped table-borderless caixa2">
+                    <thead>
+                        <tr>
+                            <th>NOME:</th>
+                            <th>URL:</th>
+                            <th>AÇÃO:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($this->view->sites as $site) { ?>
+                            <tr>
+                                <td><?= $site["nome"] ?></td>
+                                <td id="url<?=$site['id']?>"><?= $site["url"] ?></td>
+                                <td>
+                                    <a class="mr-1" href="<?= $site['url'] ?>" target="_blank"><i class="fas fa-location-arrow"></i></a>
+                                    <a class="copiar" id="copiar<?= $site['id'] ?>" href="#"><i class="far fa-copy"></i></a></td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</section>

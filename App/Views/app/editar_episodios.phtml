@@ -1,0 +1,80 @@
+<header>
+        
+    <nav class="navbar navbar-expand-sm">
+        <div class="container">
+            
+            <a class="navbar-brand" href="/main">
+                <img class="img-fluid" src="imagens/twice-logo-branco.png" style="width: 75px">
+            </a>
+
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#menu-header">
+                <i class="fas fa-hamburger"></i>
+            </button>
+
+            <div class="navbar-collapse collapse" id="menu-header">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link nav-a" href="/main">
+                            <i class="fas fa-home"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-a" href="/animes">
+                            <i class="fas fa-play-circle"></i>
+                            Animes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-a" href="/filmes">
+                            <i class="fas fa-film"></i>
+                            Filmes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-a" href="/config">
+                            <i class="fas fa-cog"></i>
+                            Configurações
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-a" href="/sair">
+                            <i class="fas fa-door-closed"></i>
+                            Sair
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+<section>
+
+    <div class="container mt-3">
+        <div class="row mb-3 rounded p-3">
+            <div class="col caixa2 rounded">
+                <form class="form-login" action="/salvarEpisodio">
+                	<label>ID do anime:</label>
+                	<input class="form-control mb-3" type="text" name="id_anime" value="<?=$this->view->episodio['id_anime']?>" readonly>
+                	<label>Nome:</label>
+                	<input class="form-control mb-3" type="text" name="nome" value="<?=$this->view->nome_anime?>" readonly>
+                    <label>ID do episódio:</label>
+                    <input class="form-control mb-3" type="text" name="id" value="<?=$this->view->episodio['id']?>" readonly>
+                	<label>Título:</label>
+                	<input class="form-control mb-3" type="text" name="titulo" value="<?=$this->view->episodio['titulo']?>">
+                	<label>Número:</label>
+                	<input class="form-control mb-3" type="number" name="numero" value="<?=$this->view->episodio['numero']?>">
+                	<label>Link do episódio:</label>
+                	<input class="form-control mb-3" type="text" name="link" value="<?=$this->view->episodio['link']?>">
+                	<label>Caminho da thumb:</label>
+                	<input class="form-control mb-3" type="text" name="thumb" value="<?=$this->view->episodio['thumb']?>">
+                	<button type="submit" class="btn btn-dark btn-block btn-ep">Salvar</button>
+                </form>          
+            </div>        
+        </div>
+
+    </div>
+
+</section>

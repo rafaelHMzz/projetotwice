@@ -1,0 +1,79 @@
+<header>
+        
+    <nav class="navbar navbar-expand-sm">
+        <div class="container">
+            
+            <a class="navbar-brand" href="/main">
+                <img class="img-fluid" src="imagens/twice-logo-branco.png" style="width: 75px">
+            </a>
+
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#menu-header">
+                <i class="fas fa-hamburger"></i>
+            </button>
+
+            <div class="navbar-collapse collapse" id="menu-header">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link nav-a" href="/main">
+                            <i class="fas fa-home"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-a" href="/animes">
+                            <i class="fas fa-play-circle"></i>
+                            Animes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-a" href="/filmes">
+                            <i class="fas fa-film"></i>
+                            Filmes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-a" href="/config">
+                            <i class="fas fa-cog"></i>
+                            Configurações
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-a" href="/sair">
+                            <i class="fas fa-door-closed"></i>
+                            Sair
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+<section>
+
+    <div class="container mt-3">
+        <div class="row mb-3 rounded p-3">
+            <?php foreach($this->view->animes as $anime) { ?>   
+                    <div class="col-md-6 col-lg-4">
+                        <div class="mt-1 mb-1 pt-3 pb-3 caixa2 rounded">
+                            <div class="col-12 d-flex justify-content-center">
+                                <h1 class=""><?= $anime["nome"] ?></h1>
+                            </div>
+                            <div class="mb-3 d-flex justify-content-center col-12">
+                                <img src="<?= $anime['thumb'] ?>" width="100%">
+                            </div>
+                            <div class="col-12 d-flex justify-content-center">
+                                <a class="btn btn-dark btn-block btn-ep" href="/assistir?nome_anime=<?=$anime["nome"]?>&id_anime=<?=$anime["id"]?>">Episódios</a>
+                            </div>
+                            <div class="col-12 mt-2 d-flex justify-content-center">
+                                <a class="btn btn-dark btn-block btn-ep" href="/adicionar?nome_anime=<?=$anime["nome"]?>&id_anime=<?=$anime["id"]?>">Adicionar episódio</a>
+                            </div>
+                        </div>        
+                    </div>        
+            <?php } ?>
+        </div>
+
+    </div>
+
+</section>
